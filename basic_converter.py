@@ -2,7 +2,7 @@
 
 from xml.etree.ElementTree import Element, SubElement, tostring
 import xml.etree.ElementTree as etree
-from ElementTree_pretty import prettify
+from ElementTree_pretty import nibStyleXml
 
 with open('xib/TableViewCell.xib', 'rt') as f:
     inputTree = etree.parse(f)
@@ -80,4 +80,4 @@ viewColor = etree.XML('<color key="backgroundColor" white="0.0" alpha="0.0" colo
 collectionCellContentView.append(viewColor)
 
 
-print prettify(outputRoot)
+print nibStyleXml(outputRoot)
