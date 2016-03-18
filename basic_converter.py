@@ -51,6 +51,10 @@ frame = tableCell.find('rect')
 collectionCell.append(backgroundColor)
 collectionCell.append(frame)
 
+# Adding 'size' tag to collection view cell, with dimensions based on 'rect' tag
+size = Element('size', { 'key' : 'customSize', 'width' : frame.get('width'), 'height' : frame.get('height') })
+collectionCell.append(size)
+
 # Directly copying over some tags from tableCell to collectionCell
 for tag in [ 'autoresizingMask', 'connections', 'point' ]:
 	node = tableCell.find(tag)
