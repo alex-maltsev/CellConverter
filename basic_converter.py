@@ -55,11 +55,14 @@ collectionCell.append(frame)
 size = Element('size', { 'key' : 'customSize', 'width' : frame.get('width'), 'height' : frame.get('height') })
 collectionCell.append(size)
 
-# Directly copying over some tags from tableCell to collectionCell
-for tag in [ 'autoresizingMask', 'connections', 'point' ]:
-	node = tableCell.find(tag)
-	collectionCell.append(node)
+# Directly copying over 'connections' and 'point' tags from tableCell to collectionCell
+collectionCell.append(tableCell.find('connections'))
+collectionCell.append(tableCell.find('point'))
 	
+# Adding 'autoresizingMask' tag typical of collection view cell
+mask = etree.XML('<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>')
+collectionCell.append(mask)
+
 # Copying constraints over
 collectionCell.append(constraints)
 
