@@ -68,6 +68,7 @@ collectionCell.append(constraints)
 
 # Adding 'view' tag under collectionViewCell, which will hold subviews
 collectionCellContentView = etree.XML('<view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center"/>')
+collectionCell.append(collectionCellContentView)
 
 # Putting all custom subviews under the 'view' tag
 collectionCellContentView.append(subviews)
@@ -82,5 +83,9 @@ SubElement(collectionCellContentView, 'autoresizingMask', { 'key' : 'autoresizin
 viewColor = etree.XML('<color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>')
 collectionCellContentView.append(viewColor)
 
-
+actions = subviews.findall('.//action')
+for action in actions:
+	if action.get('destination') == cellId:
+		action.set('destination', cellContentViewId)
+	
 print nibStyleXml(outputRoot)
