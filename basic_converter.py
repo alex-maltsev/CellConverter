@@ -32,7 +32,6 @@ cellId = tableCell.get('id')
 cellClass = tableCell.get('customClass')
 cellContentViewId = tableCellContentView.get('id')
 
-#print cellId, cellContentViewId, cellClass
 
 # Preparing attributes dictionary for collection view cell with a few generic settings, and important 'id' and 'customClass' settings
 # Using 'id' matching that of tableViewCellContentView, so that constraints can work without alterations
@@ -45,9 +44,36 @@ collectionCellAttribs = {
 collectionCell = Element('collectionViewCell', collectionCellAttribs)
 outputObjects.append(collectionCell)
 
+# Grabbing background color and cell frame
+backgroundColor = tableCellContentView.find('color')
+frame = tableCell.find('rect')
+# Setting them on collection view cell
+collectionCell.append(backgroundColor)
+collectionCell.append(frame)
+
 # Directly copying over some tags from tableCell to collectionCell
-for tag in [ 'rect', 'autoresizingMask', 'color', 'connections', 'point' ]:
+for tag in [ 'autoresizingMask', 'connections', 'point' ]:
 	node = tableCell.find(tag)
 	collectionCell.append(node)
 	
+# Copying constraints over
+collectionCell.append(constraints)
+
+# Adding 'view' tag under collectionViewCell, which will hold subviews
+collectionCellContentView = etree.XML('<view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center"/>')
+
+# Putting all custom subviews under the 'view' tag
+collectionCellContentView.append(subviews)
+
+# Setting the 'rect' tag under 'view' tag, thus making frame identical to that of collection view cell.
+collectionCellContentView.append(frame)
+
+# Setting autoresizing mask tag under 'view'
+SubElement(collectionCellContentView, 'autoresizingMask', { 'key' : 'autoresizingMask' })
+
+# Setting 'color' tag under 'view'
+viewColor = etree.XML('<color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>')
+collectionCellContentView.append(viewColor)
+
+
 print prettify(outputRoot)
