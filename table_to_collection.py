@@ -1,11 +1,41 @@
 #!/usr/bin/python
 
+import sys
 from xml.etree.ElementTree import Element, SubElement, tostring
 import xml.etree.ElementTree as etree
 from ElementTree_pretty import nibStyleXml
 
-with open('xib/TableViewCell.xib', 'rt') as f:
-    inputTree = etree.parse(f)
+# Dealing with command-line arguments
+if len(sys.argv) < 2 or len(sys.argv) > 3:
+	print 'This script requires input file name as the first argument'
+	print 'You can also provide output file name as the second argument. Otherwise output will default to "CollectionViewCell.xib"'
+	sys.exit()
+
+inputFileName = sys.argv[1]
+
+# Setting the output file name to second argument or to the default value
+if len(sys.argv) == 3:
+	outputFileName = sys.argv[2]
+else:
+	outputFileName = 'CollectionViewCell.xib'
+
+# Making sure that we can open the input file
+try:
+	inputFile = open(inputFileName, 'rt')
+except:
+	print 'Could not open the file ' + inputFileName
+	sys.exit()
+
+# Making sure that we can open the output file
+try:
+	outputFile = open(outputFileName, 'wt')
+except:
+	print 'Could not open the file ' + outputFileName
+	sys.exit()
+
+
+# Everything is good. Proceeding with actual functionality.
+inputTree = etree.parse(inputFile)
 inputRoot = inputTree.getroot()
 
 # Several things can be simply copied over
@@ -88,4 +118,5 @@ for action in actions:
 	if action.get('destination') == cellId:
 		action.set('destination', cellContentViewId)
 	
-print nibStyleXml(outputRoot)
+outputFile.write(nibStyleXml(outputRoot))
+outputFile.close()
