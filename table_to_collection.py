@@ -113,10 +113,18 @@ SubElement(collectionCellContentView, 'autoresizingMask', { 'key' : 'autoresizin
 viewColor = etree.XML('<color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>')
 collectionCellContentView.append(viewColor)
 
+# Updating UI elements actions to connect to collection view cell correctly
 actions = subviews.findall('.//action')
 for action in actions:
 	if action.get('destination') == cellId:
 		action.set('destination', cellContentViewId)
 	
+# Updating UI elements delegate outlets to connect to collection view cell correctly
+outlets = subviews.findall('.//outlet')
+for outlet in outlets:
+	if outlet.get('destination') == cellId:
+		outlet.set('destination', cellContentViewId)
+
+
 outputFile.write(nibStyleXml(outputRoot))
 outputFile.close()
