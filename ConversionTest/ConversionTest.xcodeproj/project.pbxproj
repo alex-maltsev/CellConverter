@@ -14,6 +14,12 @@
 		9E43BDBF1C9E1D9500BF6F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E43BDBD1C9E1D9500BF6F1C /* LaunchScreen.storyboard */; };
 		9E43BDC81C9E1FA500BF6F1C /* TableTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43BDC71C9E1FA500BF6F1C /* TableTestController.m */; };
 		9E43BDCB1C9E1FBF00BF6F1C /* CollectionTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43BDCA1C9E1FBF00BF6F1C /* CollectionTestController.m */; };
+		9E43BDD61C9E2EF400BF6F1C /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43BDCE1C9E2EF400BF6F1C /* CellView.m */; };
+		9E43BDD71C9E2EF400BF6F1C /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E43BDCF1C9E2EF400BF6F1C /* CellView.xib */; };
+		9E43BDD81C9E2EF400BF6F1C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43BDD11C9E2EF400BF6F1C /* CollectionViewCell.m */; };
+		9E43BDD91C9E2EF400BF6F1C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E43BDD21C9E2EF400BF6F1C /* CollectionViewCell.xib */; };
+		9E43BDDA1C9E2EF400BF6F1C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43BDD41C9E2EF400BF6F1C /* TableViewCell.m */; };
+		9E43BDDB1C9E2EF400BF6F1C /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E43BDD51C9E2EF400BF6F1C /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,15 @@
 		9E43BDC71C9E1FA500BF6F1C /* TableTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTestController.m; sourceTree = "<group>"; };
 		9E43BDC91C9E1FBF00BF6F1C /* CollectionTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTestController.h; sourceTree = "<group>"; };
 		9E43BDCA1C9E1FBF00BF6F1C /* CollectionTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTestController.m; sourceTree = "<group>"; };
+		9E43BDCD1C9E2EF400BF6F1C /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
+		9E43BDCE1C9E2EF400BF6F1C /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		9E43BDCF1C9E2EF400BF6F1C /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		9E43BDD01C9E2EF400BF6F1C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		9E43BDD11C9E2EF400BF6F1C /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		9E43BDD21C9E2EF400BF6F1C /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		9E43BDD31C9E2EF400BF6F1C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		9E43BDD41C9E2EF400BF6F1C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		9E43BDD51C9E2EF400BF6F1C /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,7 @@
 		9E43BDAE1C9E1D9500BF6F1C /* ConversionTest */ = {
 			isa = PBXGroup;
 			children = (
+				9E43BDCC1C9E2EB900BF6F1C /* Cells */,
 				9E43BDB21C9E1D9500BF6F1C /* AppDelegate.h */,
 				9E43BDB31C9E1D9500BF6F1C /* AppDelegate.m */,
 				9E43BDC61C9E1FA500BF6F1C /* TableTestController.h */,
@@ -82,6 +98,22 @@
 				9E43BDB01C9E1D9500BF6F1C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E43BDCC1C9E2EB900BF6F1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E43BDCD1C9E2EF400BF6F1C /* CellView.h */,
+				9E43BDCE1C9E2EF400BF6F1C /* CellView.m */,
+				9E43BDCF1C9E2EF400BF6F1C /* CellView.xib */,
+				9E43BDD01C9E2EF400BF6F1C /* CollectionViewCell.h */,
+				9E43BDD11C9E2EF400BF6F1C /* CollectionViewCell.m */,
+				9E43BDD21C9E2EF400BF6F1C /* CollectionViewCell.xib */,
+				9E43BDD31C9E2EF400BF6F1C /* TableViewCell.h */,
+				9E43BDD41C9E2EF400BF6F1C /* TableViewCell.m */,
+				9E43BDD51C9E2EF400BF6F1C /* TableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +173,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E43BDD71C9E2EF400BF6F1C /* CellView.xib in Resources */,
+				9E43BDDB1C9E2EF400BF6F1C /* TableViewCell.xib in Resources */,
 				9E43BDBF1C9E1D9500BF6F1C /* LaunchScreen.storyboard in Resources */,
 				9E43BDBC1C9E1D9500BF6F1C /* Assets.xcassets in Resources */,
 				9E43BDBA1C9E1D9500BF6F1C /* Main.storyboard in Resources */,
+				9E43BDD91C9E2EF400BF6F1C /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,8 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E43BDDA1C9E2EF400BF6F1C /* TableViewCell.m in Sources */,
+				9E43BDD81C9E2EF400BF6F1C /* CollectionViewCell.m in Sources */,
 				9E43BDC81C9E1FA500BF6F1C /* TableTestController.m in Sources */,
 				9E43BDCB1C9E1FBF00BF6F1C /* CollectionTestController.m in Sources */,
+				9E43BDD61C9E2EF400BF6F1C /* CellView.m in Sources */,
 				9E43BDB41C9E1D9500BF6F1C /* AppDelegate.m in Sources */,
 				9E43BDB11C9E1D9500BF6F1C /* main.m in Sources */,
 			);

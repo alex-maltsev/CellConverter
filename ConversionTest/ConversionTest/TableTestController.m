@@ -8,7 +8,10 @@
 
 #import "TableTestController.h"
 
-@interface TableTestController () <UITableViewDataSource>
+#define TABLE_CELL_XIB_NAME @"TableViewCell"
+#define TABLE_CELL_HEIGHT 50.0
+
+@interface TableTestController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -20,18 +23,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.tableView registerNib:[UINib nibWithNibName:TABLE_CELL_XIB_NAME bundle:nil] forCellReuseIdentifier:TABLE_CELL_XIB_NAME];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 5;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:TABLE_CELL_XIB_NAME forIndexPath:indexPath];
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return TABLE_CELL_HEIGHT;
 }
 
 @end
