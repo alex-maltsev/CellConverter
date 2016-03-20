@@ -43,7 +43,7 @@
                     </connections>
                 </textField>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.90236333020050119" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="s0A-bb-7Lb" firstAttribute="centerY" secondItem="dez-Nt-L5C" secondAttribute="centerY" id="1c3-QU-luy"/>
                 <constraint firstItem="HiV-6z-4ik" firstAttribute="leading" secondItem="Aum-Nv-q8j" secondAttribute="trailing" id="JB3-ay-3Yy"/>
